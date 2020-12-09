@@ -1,4 +1,4 @@
-FIBONACCI_NUMBER = 15
+FIBONACCI_NUMBER = 3
 
 
 def test_core_2_fibonacci_recursive(benchmark):
