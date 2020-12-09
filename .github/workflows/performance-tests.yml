@@ -1,0 +1,56 @@
+name: Performance Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package-group: ["core"]
+    steps:
+      - name: Checkout Repo @ SHA - ${{ github.sha }}
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install tox
+        run: pip install -U tox-factor
+      - name: Cache tox environment
+        # Preserves .tox directory between runs for faster installs
+        uses: actions/cache@v2
+        with:
+          path: .tox
+          key: tox-cache-${{ hashFiles('tox.ini') }}
+      - name: run tox
+        run: tox -f ${{ matrix.package-group }} -- --benchmark-json=${{ matrix.package-group }}-benchmark.json
+      - name: Find and merge benchmarks
+        run: jq -s '.[0].benchmarks = ([.[].benchmarks] | add) | if .[0].benchmarks == null then null else .[0] end' */tests/*${{ matrix.package-group }}*.json > output.json
+      # - name: Report on benchmark results
+      #   if: ! contains(github.ref, "release")
+      #   uses: rhysd/github-action-benchmark@v1
+      #   with:
+      #     name: OpenTelemetry Python Benchmark
+      #     tool: pytest
+      #     output-file-path: output.json
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     # Alert with a commit comment on possible performance regression
+      #     alert-threshold: 200%
+      #     comment-always: true
+      #     fail-on-alert: true
+      #     alert-comment-cc-users: '@${{ github.event.issue.user.login }}'
+      - name: Push benchmark result
+        # if: contains(github.ref, "release")
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          name: OpenTelemetry Python Benchmark
+          tool: pytest
+          output-file-path: output.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Make a commit on `gh-pages` with benchmarks from previous step
+          auto-push: true
+          benchmark-data-dir-path: benchmarks
+  
