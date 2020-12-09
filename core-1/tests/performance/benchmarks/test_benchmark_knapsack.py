@@ -1,6 +1,6 @@
-ITEM_VALUES = [50, 100]
-ITEM_WEIGHTS = [10, 30]
-BACKPACK_CAPACITY = 40
+ITEM_VALUES = [50, 100, 150]
+ITEM_WEIGHTS = [10, 30, 70]
+BACKPACK_CAPACITY = 150
 
 
 def test_core_1_benchmark_1(benchmark):
