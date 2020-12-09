@@ -1,5 +1,5 @@
-ITEM_VALUES = [50, 100, 150]
-ITEM_WEIGHTS = [10, 30, 70]
+ITEM_VALUES = [50, 100, 150, 200, 250, 300]
+ITEM_WEIGHTS = [10, 30, 70, 75, 80, 100]
 BACKPACK_CAPACITY = 150
 
 
@@ -59,7 +59,7 @@ def test_core_1_benchmark_3(benchmark):
 
         if weights[-1] > capacity:
             memo[len(values)][capacity] = knapsack_recursive_memoization(
-                capacity, weights[:-1], values[-1], memo
+                capacity, weights[:-1], values[:-1], memo
             )
             return memo[len(values)][capacity]
 
