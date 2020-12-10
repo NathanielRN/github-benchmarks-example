@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607629422148,
+  "lastUpdate": 1607629426911,
   "repoUrl": "https://github.com/NathanielRN/github-benchmarks-example",
   "entries": {
     "OpenTelemetry Python Benchmark": [
@@ -1473,6 +1473,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 4.712203243922417e-8",
             "extra": "mean: 147.21140244274693 nsec\nrounds: 81301"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "enruizno@edu.uwaterloo.ca",
+            "name": "(Eliseo) Nathaniel Ruiz Nowell",
+            "username": "NathanielRN"
+          },
+          "committer": {
+            "email": "enowell@amazon.com",
+            "name": "Nathaniel Ruiz Nowell",
+            "username": "NathanielRN"
+          },
+          "distinct": true,
+          "id": "e980c32c7aea756dd6f2377147501094dbe8893d",
+          "message": "Merge pull request #3 from NathanielRN/worse-performance\n\nMake the performance worse",
+          "timestamp": "2020-12-10T11:42:24-08:00",
+          "tree_id": "565e9a2b79ab446fce3bf6626532a4b86d8bc6c1",
+          "url": "https://github.com/NathanielRN/github-benchmarks-example/commit/e980c32c7aea756dd6f2377147501094dbe8893d"
+        },
+        "date": 1607629426306,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "performance/benchmarks/test_benchmark_prime_factors.py::test_instrumentation_1_prime_factors",
+            "value": 7272119.218051979,
+            "unit": "iter/sec",
+            "range": "stddev: 1.3872283744140354e-7",
+            "extra": "mean: 137.51149699495534 nsec\nrounds: 79359"
           }
         ]
       }
