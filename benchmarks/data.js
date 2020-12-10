@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607627172810,
+  "lastUpdate": 1607627178166,
   "repoUrl": "https://github.com/NathanielRN/github-benchmarks-example",
   "entries": {
     "OpenTelemetry Python Benchmark": [
@@ -792,6 +792,39 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000019281628138446554",
             "extra": "mean: 1.0264173823579186 usec\nrounds: 153847"
+          }
+        ]
+      }
+    ],
+    "OpenTelemetry Python Benchmarks - Python 3.6 - instrumentation": [
+      {
+        "commit": {
+          "author": {
+            "email": "enruizno@edu.uwaterloo.ca",
+            "name": "(Eliseo) Nathaniel Ruiz Nowell",
+            "username": "NathanielRN"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d511cbd0460bb0b45040942ee9b70aea037e15d6",
+          "message": "Merge pull request #6 from NathanielRN/add-python-version-namespace\n\nAdd python version namespace + new package",
+          "timestamp": "2020-12-10T19:05:36Z",
+          "tree_id": "acae648579aef49638394fa45c45827841295317",
+          "url": "https://github.com/NathanielRN/github-benchmarks-example/commit/d511cbd0460bb0b45040942ee9b70aea037e15d6"
+        },
+        "date": 1607627174470,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "performance/benchmarks/test_benchmark_prime_factors.py::test_instrumentation_1_prime_factors",
+            "value": 1204985.9082051401,
+            "unit": "iter/sec",
+            "range": "stddev: 4.743550330818463e-7",
+            "extra": "mean: 829.885223711477 nsec\nrounds: 188680"
           }
         ]
       }
