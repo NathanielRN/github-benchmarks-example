@@ -40,7 +40,7 @@ jobs:
       - name: Push benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
-          name: OpenTelemetry Python Benchmark
+          name: OpenTelemetry Python for Python ${{ env[matrix.python-version ]}} Benchmark
           tool: pytest
           output-file-path: output.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
