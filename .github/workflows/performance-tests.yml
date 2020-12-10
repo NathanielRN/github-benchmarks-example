@@ -38,9 +38,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # Alert with a commit comment on possible performance regression
           alert-threshold: 200%
-          comment-always: true
+          comment-on-alert: true
           fail-on-alert: true
-          alert-comment-cc-users: '@${{ github.event.issue.user.login }}'
+          alert-comment-cc-users: '@${{ github.actor }}'
           # Make a commit on `gh-pages` with benchmarks from previous step
           auto-push: ${{ github.ref == 'refs/heads/mainline' }}
           benchmark-data-dir-path: benchmarks
