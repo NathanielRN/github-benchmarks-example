@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1607555530133,
+  "lastUpdate": 1607559397243,
   "repoUrl": "https://github.com/NathanielRN/github-benchmarks-example",
   "entries": {
     "OpenTelemetry Python Benchmark": [
@@ -198,6 +198,72 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 1.973786726306123e-7",
             "extra": "mean: 419.1994094820178 nsec\nrounds: 175439"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "enruizno@edu.uwaterloo.ca",
+            "name": "(Eliseo) Nathaniel Ruiz Nowell",
+            "username": "NathanielRN"
+          },
+          "committer": {
+            "email": "enowell@amazon.com",
+            "name": "Nathaniel Ruiz Nowell",
+            "username": "NathanielRN"
+          },
+          "distinct": true,
+          "id": "66126af6bb4a80b1ae754e11a499b6e9fbf0f285",
+          "message": "Merge pull request #1 from NathanielRN/add-performance-tests\n\nAdd benchmarking performance tests",
+          "timestamp": "2020-12-09T16:14:46-08:00",
+          "tree_id": "e715ca3878a02759d1ddded4bd3165b93031e828",
+          "url": "https://github.com/NathanielRN/github-benchmarks-example/commit/66126af6bb4a80b1ae754e11a499b6e9fbf0f285"
+        },
+        "date": 1607559396217,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "performance/benchmarks/test_benchmark_knapsack.py::test_core_1_benchmark_1",
+            "value": 197299.12642067787,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000008123589729324315",
+            "extra": "mean: 5.068446161630827 usec\nrounds: 75188"
+          },
+          {
+            "name": "performance/benchmarks/test_benchmark_knapsack.py::test_core_1_benchmark_2",
+            "value": 5641.748613416757,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00007693061932778416",
+            "extra": "mean: 177.25001032869133 usec\nrounds: 6390"
+          },
+          {
+            "name": "performance/benchmarks/test_benchmark_knapsack.py::test_core_1_benchmark_3",
+            "value": 137589.0078337263,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000013056968244497927",
+            "extra": "mean: 7.268022465926065 usec\nrounds: 70418"
+          },
+          {
+            "name": "performance/benchmarks/test_benchmark_fibonacci.py::test_core_2_fibonacci_recursive",
+            "value": 1284840.73178565,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000012016605139699729",
+            "extra": "mean: 778.3065832682576 nsec\nrounds: 72464"
+          },
+          {
+            "name": "performance/benchmarks/test_benchmark_fibonacci.py::test_core_2_fibonacci_recursive_memoized",
+            "value": 796616.4534806509,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0000019686303028065627",
+            "extra": "mean: 1.2553092465397957 usec\nrounds: 196079"
+          },
+          {
+            "name": "performance/benchmarks/test_benchmark_fibonacci.py::test_core_2_benchmark_2",
+            "value": 1828907.7381073732,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000001198480941449843",
+            "extra": "mean: 546.7744376405933 nsec\nrounds: 192271"
           }
         ]
       }
