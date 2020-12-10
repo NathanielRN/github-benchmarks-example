@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package-group: ["core"]
+        package-group: ["core", "instrumentation"]
         python-version: [ py35, py36, py37, py38, pypy3 ]
     steps:
       - name: Checkout Repo @ SHA - ${{ github.sha }}
@@ -40,7 +40,7 @@ jobs:
       - name: Push benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
-          name: OpenTelemetry Python for Python ${{ env[matrix.python-version ]}} Benchmark
+          name: OpenTelemetry Python Benchmarks - Python ${{ env[matrix.python-version ]}} - ${{ matrix.package-group }}
           tool: pytest
           output-file-path: output.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
