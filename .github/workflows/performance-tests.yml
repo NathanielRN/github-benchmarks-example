@@ -41,9 +41,8 @@ jobs:
         uses: rhysd/github-action-benchmark@v1
         with:
           name: OpenTelemetry Python Benchmarks - Python ${{ env[matrix.python-version ]}} - ${{ matrix.package-group }}
-          if: always()
           tool: pytest
-          output-file-path: output.json
+          output-file-path: missing.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # Alert with a commit comment on possible performance regression
           alert-threshold: 200%
