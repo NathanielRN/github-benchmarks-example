@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package-group: ["core", "instrumentation"]
-        python-version: [ py35, py36, py37, py38, pypy3 ]
+        package-group: ["core" ]
+        python-version: [ py35 ]
     steps:
       - name: Checkout Repo @ SHA - ${{ github.sha }}
         uses: actions/checkout@v2
